@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>Realtime Chat APP</title>
+  <meta name="title" content="Realtime World Chat  APP">
+  <meta name="description" content="This is a simple Realtime Chat app using Firebase. Here you can chat with anyone without Login or SignUP. It
+        helps you to meet new people and make new friends.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chatapp.js.org/">
+  <meta property="og:title" content="Realtime World Chat  APP">
+  <meta property="og:description" content="This is a simple Realtime Chat app using Firebase. Here you can chat with anyone without Login or SignUP. It
+        helps you to meet new people and make new friends.">
+  <meta property="og:image" content="./screenshot/screenshot_pc.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://chatapp.js.org/">
+  <meta property="twitter:title" content="Realtime World Chat  APP">
+  <meta property="twitter:description" content="This is a simple Realtime Chat app using Firebase. Here you can chat with anyone without Login or SignUP. It
+        helps you to meet new people and make new friends.">
+  <meta property="twitter:image" content="./screenshot/screenshot_pc.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="./src/css/aos.min.css">
+<link rel="stylesheet" href="./src/css/main.css">
+<link rel="stylesheet" href="./src/css/style.css">
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.js"></script>
+
+<script>
+
+        </script>
+</head>
+
+<body>
+
+  <header>
+    <div class="scrollbar"> </div>
+    <nav>
+      <div id="profile2" onclick="myInfo()"></div>
+     <img src="src/images/icon-home.png" width="200px" height="100px"/>
+      <i class="fa fa-arrow-circle-left" aria-hidden="true" onclick="toogleInfo()"></i>
+    </nav>
+  </header>
+
+  <main>
+<section id="myinfo" dir="rtl" class="myinfo">
+  </section>
+    <section id="info" dir="rtl">
+
+      <h2>عن التطبيق</h2>
+      <p>  هذا تطبيق بسيط يستخدم
+        Realtime Chat Firebase.
+        هنا يمكنك الدردشة مع أي شخص دون تسجيل الدخول أو الاشتراك.
+     هو
+         يساعدك على التعرف على أشخاص جدد وتكوين صداقات جديدة.</p> <br>
+<div id="dis"></div>
+<br>
+<div class="info">
+  <br>
+      <p class="details">
+<b>الاسم : </b>
+<span id="your-name"><img src="./src/images/spinner.gif"  id="loadeing"/></span><span id="State"></span>
+&nbsp; <i class="fa fa-sign-out"
+          aria-hidden="true" onclick="signOut()"></i>
+</p>
+<p class="details">
+<b>البلد : </b>
+<span id="your-country"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+<span id="your-emoji" dir="trl"></span>
+</p>
+<p class="details">
+<b>حالة المستخدم:</b>
+<span id="caseuser"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+</p>
+<p class="details">
+<b>عدد الرسائل التي ارسلتها:</b>
+<span id="sendmseg"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+</p>
+
+<br>
+</div>
+<div class="info">
+<br>
+<p class="details"><b>عدد مستخدمين التطبيق : </b>
+<span id="ttl-users"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+</p>
+<p class="details"><b>عدد الرسائل المرسله: </b>
+<span id="ttl-msg"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+</p>
+<p class="details"><b>عدد زيارات التطبيق : </b>
+<span id="ttl-view"><img src="./src/images/spinner.gif"  id="loadeing"/></span>
+</p>
+<p class="details">
+<b>زمن تشغيل التطبيق : </b>
+<span id="crt-time"> 00:00:00</span>
+</p>
+  <br>
+  </div>
+<div class="info">
+  <br>
+<p class="details">
+<b>ملفات تعريف الارتباط : </b>
+<span id="check-cookies"> --</span>
+</p>
+<p class="details"><b>الايمجي: </b>
+<span id="check-emoji"> --</span>
+</p>
+<p class="details">
+<b> يونيكود: </b>
+<span id="check-unicode"> --</span>
+</p>
+<p class="details">
+<b>الصوت : </b>
+<span id="check-audio"> --</span>
+</p>
+<br>
+</div>
+<button onclick="window.location.href = 'https://github.com/mojtaba1996cs/chat-app-chat-app-f'" id="sors">عرض المصدر</button>
+
+      <div class="container">
+        <h2 class="footer__title">Muhammad Al-mojtaba</h2>
+        <div class="footer__social">
+          <a href="https://github.com/mojtaba1996cs" target="blank"
+            ><i class="fa fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/mwlite/in/muhammad-al-mojtaba-88b16912b" target="blank"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+          <a href="https://twitter.com/CsMojtaba" target="blank"
+            ><i class="fa fa-twitter"></i
+          ></a>
+          <a href="https://stackoverflow.com/users/9783310/%d9%85%d8%ad%d9%85%d8%af-%d8%a7%d9%84%d9%85%d8%ac%d8%aa%d8%a8%d9%8a" target="blank"><i class="fa fa-stack-overflow"></i></a>
+        </div>
+
+      </div>
+
+      <br><br>
+</section>
+
+    <section id="chat">
+
+      <!-- messages will display here -->
+      <div class="message-container" id="message-container">
+        <p class="loader">مرحبا بك في تطبيق الدردشة الجماعي</p>
+        <p class="loader2"> <img src="./src/images/spinner.gif"  id="loadeing"/> جاري تحميل الرسائل</p>
+<p class="loader3"><img src="./src/images/spinner.gif"  id="loadeing"/> جاري تسجيل الاسم</p>
+        <!-- <div class="message">
+          <p class="username">Prateek</p>
+          <p class="msg-text">Hello World</p>
+          <p class="msg-time">1 day ago</p>
+        </div> -->
+
+      </div>
+
+
+      <!-- form to send message -->
+      <form id="message-form" dir="rtl">
+        <input id="message-input" type="text" placeholder="اكتب رسالتك" maxlength="350" required />
+        <button id="message-btn" type="submit">ارسال</button>
+      </form>
+
+    </section>
+  </main>
+  <!-- scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="src/javascript/firebase-app.js"></script>
+  <script src="src/javascript/firebase-database.js"></script>
+  <script src="firebaseConfig.js"></script>
+  <script src="src/javascript/jquery.min.js"></script>
+  <script src="src/javascript/scrollTo.min.js"></script>
+  <script src="src/javascript/gsap.min.js"></script>
+  <script src="src/javascript/ScrollTrigger.min.js"></script>
+  <script src="src/javascript/spamFilter.js"></script>
+  <script src="src/javascript/linkify.min.js"></script>
+  <script src="src/javascript/linkify-string.min.js"></script>
+  <script src="src/javascript/aos.js"></script>
+  <script src="src/javascript/js.cookie.min.js"></script>
+  <script src="src/javascript/moment.min.js"></script>
+  <script src="src/javascript/countlyFlags.js"></script>
+  <script src="src/javascript/modernizr.min.js"></script>
+  <script src="src/javascript/moment-timezone-with-data.min.js"></script>
+  <script src="src/javascript/xss.min.js"></script>
+  <script src="src/javascript/sweetalert.min.js"></script>
+  <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>!-->
+  <script src="src/javascript/main.js"></script>
+</body>
+</html>

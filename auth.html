@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Authentication</title>
+    <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="shortcut icon" type="image/png" href="https://naishare.com/images/favicon.png" />
+ <link href="https://fonts.googleapis.com/earlyaccess/notokufiarabic.css" rel="stylesheet">
+ <link rel="stylesheet" href="./src/css/font-awesome.min.css">
+<link rel="stylesheet" href="./src/css/main.css">
+<link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="./src/css/aos.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.js"></script>
+ <!--<script src="./src/javascript/auth.js"></script> !-->
+ <script>
+ UPLOADCARE_LOCALE = "ar";
+ UPLOADCARE_PUBLIC_KEY = "1dd76d14be3dd24123f1"; UPLOADCARE_TABS = "all";
+UPLOADCARE_EFFECTS = "flip, crop, enhance, rotate, blur, grayscale, mirror, sharp, invert";
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script> <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.min.js"></script>
+  <script>
+    function installWidgetPreviewSingle(widget, img) {
+  widget.onChange(function(file) {
+    img.css('visibility', 'hidden')
+    img.attr('src', '')
+    if (file) {
+      file.done(function(fileInfo) {
+        var size = '' + img.width() * 2 + 'x' + img.height() * 2;
+        var previewUrl = fileInfo.cdnUrl + '-/scale_crop/' + size + '/center/';
+
+        img.attr('src', previewUrl)
+        img.css('visibility', 'visible')
+      })
+    }
+  })
+}
+
+$('.image-preview-single').each(function() {
+  installWidgetPreviewSingle(uploadcare.SingleWidget($(this).children('input')), $(this).children('img'))
+})
+      </script>
+</head>
+
+<body>
+  <header>
+    <div class="scrollbar"> </div>
+    <nav>
+      <img src="src/images/icon-home.png" width="250px" height="100px"/>
+            <i class="fa fa-arrow-circle-left" aria-hidden="true" onclick="toogleInfo()" id="toogle"></i>
+      <i class="fa fa-home" onclick="home()" id="home"> </i>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="info" dir="rtl">
+
+      <h2> عن التطبيق </h2>
+      <p>  هذا تطبيق بسيط يستخدم
+        Realtime Chat Firebase.
+        هنا يمكنك الدردشة مع أي شخص دون تسجيل الدخول أو الاشتراك.
+     هو
+         يساعدك على التعرف على أشخاص جدد وتكوين صداقات جديدة.</p> <br>
+      <!-- <button type="button" id="btnCustom3">انشاء حساب
+</button>!-->
+        <br><br>
+<div class="info">
+  <br>
+      <p class="details">
+<b>الاسم : </b>
+<span id="your-name"> --</span>
+&nbsp; <i class="fa fa-sign-out"
+          aria-hidden="true" onclick="signOut()"></i>
+</p>
+<p class="details">
+<b>البلد : </b>
+<span id="your-country"> --</span>
+<span id="your-emoji" dir="trl"> --</span>
+</p>
+<p class="details">
+<b>حالة المستخدم:</b>
+<span id="caseuser">--</span>
+</p>
+<p class="details">
+<b>عدد الرسائل التي ارسلتها:</b>
+<span id="sendmseg">--</span>
+</p>
+<!--<span id="State">--</span>!-->
+<br>
+</div>
+<div class="info">
+<br>
+<p class="details"><b>عدد مستخدمين التطبيق : </b>
+<span id="ttl-users"> 00</span>
+</p>
+<p class="details"><b>عدد الرسائل المرسله: </b>
+<span id="ttl-msg"> 00</span>
+</p>
+<p class="details"><b>عدد زيارات التطبيق : </b>
+<span id="ttl-view"> 00</span>
+</p>
+<p class="details">
+<b>زمن تشغيل التطبيق : </b>
+<span id="crt-time"> 00:00:00</span>
+</p>
+  <br>
+  </div>
+<div class="info">
+  <br>
+<p class="details">
+<b>ملفات تعريف الارتباط : </b>
+<span id="check-cookies"> --</span>
+</p>
+<p class="details"><b>الايمجي: </b>
+<span id="check-emoji"> --</span>
+</p>
+<p class="details">
+<b> يونيكود: </b>
+<span id="check-unicode"> --</span>
+</p>
+<p class="details">
+<b>الصوت : </b>
+<span id="check-audio"> --</span>
+</p>
+<br>
+</div>
+<button onclick="window.location.href = 'https://github.com/mojtaba1996cs/chat-app-chat-app-f'" id="sors">عرض المصدر</button>
+            <div class="container">
+        <h2 class="footer__title">Muhammad Al-mojtaba</h2>
+        <div class="footer__social">
+          <a href="https://github.com/mojtaba1996cs" target="blank"
+            ><i class="fa fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/mwlite/in/muhammad-al-mojtaba-88b16912b" target="blank"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+          <a href="https://twitter.com/CsMojtaba" target="blank"
+            ><i class="fa fa-twitter"></i
+          ></a>
+                    <a href="https://stackoverflow.com/users/9783310/%d9%85%d8%ad%d9%85%d8%af-%d8%a7%d9%84%d9%85%d8%ac%d8%aa%d8%a8%d9%8a" target="blank"><i class="fa fa-stack-overflow"></i></a>
+        </div>
+
+      </div>
+</section>
+
+    <section id="chat">
+
+ <div class="forms-out" dir="rtl">
+    <div class="forms-in">
+      <div id="registration-page">
+        <h3>انشاء حساب</h3>
+<form id="inseruser">
+     <p>   اسم المستخدم </p>
+        <span id="registration-name"></span>
+<br/>
+
+      <p>  الايميل </p>
+  <input type="email" id="registration-email" required/><br />
+     <p>   كلمة المرور </p>
+<input type="password" id="registration-password" required/><br />
+  <p>اختر الصورة الشخصية </p>
+ <div class="image-preview-single">
+ <div class="uploader-demo-crazy">
+ <input type="hidden" role="uploadcare-uploader" data-clearable="" data-images-only id="profile-img"/>
+ </div><img src="" alt="" /></div>
+  <br><br>
+<center>
+<button id="register" type="submit">انشاء حساب</button>
+</center>
+  </form>
+</div>
+
+  <!--
+<div class="line"><div class="line1"></div><div class="line3">OR</div><div class="line2"></div></div>
+!-->
+</div></div>
+
+</section></main>
+<script src="src/javascript/firebase-app.js"></script>
+  <script src="src/javascript/firebase-database.js"></script>
+  <script src="firebaseConfig.js"></script>
+  <script src="src/javascript/jquery.min.js"></script>
+  <script src="src/javascript/scrollTo.min.js"></script>
+  <script src="src/javascript/gsap.min.js"></script>
+  <script src="src/javascript/ScrollTrigger.min.js"></script>
+  <script src="src/javascript/spamFilter.js"></script>
+  <script src="src/javascript/linkify.min.js"></script>
+  <script src="src/javascript/linkify-string.min.js"></script>
+  <script src="src/javascript/aos.js"></script>
+  <script src="src/javascript/js.cookie.min.js"></script>
+  <script src="src/javascript/moment.min.js"></script>
+  <script src="src/javascript/countlyFlags.js"></script>
+  <script src="src/javascript/modernizr.min.js"></script>
+  <script src="src/javascript/moment-timezone-with-data.min.js"></script>
+  <script src="src/javascript/xss.min.js"></script>
+  <script src="src/javascript/sweetalert.min.js"></script>
+  <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>!-->
+  <script src="src/javascript/script.js"></script>
+  <script src="src/javascript/main3.js"></script>
+</body>
+</html>
