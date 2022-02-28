@@ -1,7 +1,7 @@
 <!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/197e8649-142e-43e2-8b74-c353c30dbff4/deploy-status)](https://app.netlify.com/sites/realtime-web-chatapp/deploys) -->
 
 <div align="center">
-<!--     <a href="https://github.com/7ORP3DO/realtime-chat-app">
+<!--     <a href="https://mojtaba1996cs.github.io/chat-app-chat-app-f/">
     <img src="./screenshot/logo.png" alt="Logo" width="280" height="40"> -->
   </a>
   <h3 align="center">Realtime Web Chatapp</h3>
@@ -10,11 +10,9 @@
     A Simple Realtime Chat app using Firebase
     <br />
     <br />
-    <a href="https://realtime-web-chatapp.netlify.app/">View Demo</a>
-    ·
-    <a href="https://github.com/7ORP3DO/realtime-chat-app/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/7ORP3DO/realtime-chat-app/issues">Request Feature</a>
+    <a href='https://mojtaba1996cs.github.io/chat-app-chat-app-f/">View Demo</a>
+   
+    
     <br />
   </p>
 </div>
@@ -60,7 +58,7 @@ For you to be able to understant code, it will be nice if you have basic underst
 1. Get the snippet for your app's Firebase config object [https://console.firebase.google.com/](https://console.firebase.google.com/)
 2. Clone the repo
    ```sh
-   git clone https://github.com/7ORP3DO/realtime-chat-app.git
+   git clone https://mojtaba1996cs.github.io/chat-app-chat-app-f.git
    ```
 3. Enter snippet in `firebaseConfig.js` like this:
    ```js
@@ -109,10 +107,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Prateek SIngh - [@bhps82](https://twitter.com/bhps82) - bhps82@gmail.com
+Prateek SIngh - [@bhps82](https://twitter.com/CsMojtaba) -CsMojtaba@gmail.com
 
-Project Link: [https://github.com/7ORP3DO/realtime-chat-app](https://github.com/7ORP3DO/realtime-chat-app)
-
+Project Link: [https://mojtaba1996cs.github.io/chat-app-chat-app-f/](https://mojtaba1996cs.github.io/chat-app-chat-app-f/index.html
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 [product-screenshot]: ./screenshot/realtime-web-chatapp.netlify.app_.png
